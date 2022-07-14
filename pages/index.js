@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import getJoke from '../api/jokeData';
 
 function Home() {
@@ -17,13 +16,14 @@ function Home() {
   };
 
   return (
-    <>
-      <Button type="button" onClick={getAJoke}>
+    <div className="joke-container d-flex flex-column justify-content-center align-content-center">
+      <button type="button" className="button-53" onClick={getAJoke}>
         {btnText}
-      </Button>
+      </button>
+      <h1>{btnText === 'Get A Joke' ? 'Want to hear a bad joke?' : '' }</h1>
       <h1>{joke.setup}</h1>
       <h4>{btnText === 'Get Another Joke' ? joke.delivery : ''}</h4>
-    </>
+    </div>
   );
 }
 
